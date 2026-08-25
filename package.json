@@ -1,0 +1,40 @@
+{
+  "name": "markdown-viewer",
+  "version": "5.3.0",
+  "description": "Markdown Viewer / Browser Extension",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/**/*.test.js",
+    "test:unit": "node --test tests/unit/*.test.js",
+    "test:integration": "node --test tests/integration/*.test.js"
+  },
+  "dependencies": {
+    "commonmark": "0.30.0",
+    "markdown-it": "13.0.1",
+    "markdown-it-abbr": "1.0.4",
+    "markdown-it-anchor": "8.6.7",
+    "markdown-it-attrs": "4.1.6",
+    "markdown-it-cjk-breaks": "1.1.3",
+    "markdown-it-deflist": "2.1.0",
+    "markdown-it-footnote": "3.0.3",
+    "markdown-it-ins": "3.0.1",
+    "markdown-it-mark": "3.0.1",
+    "markdown-it-sub": "1.0.0",
+    "markdown-it-sup": "1.0.0",
+    "markdown-it-task-lists": "2.1.1",
+    "marked": "12.0.1",
+    "marked-gfm-heading-id": "3.1.3",
+    "marked-linkify-it": "3.1.9",
+    "remark": "15.0.1",
+    "remark-breaks": "4.0.0",
+    "remark-gfm": "4.0.0",
+    "remark-html": "16.0.1",
+    "remark-slug": "7.0.1",
+    "remarkable": "2.0.1",
+    "showdown": "2.1.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
