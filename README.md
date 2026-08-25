@@ -335,6 +335,60 @@ Note that in any of the following cases you won't receive any future updates aut
 
 ---
 
+# Development
+
+## GFM Compliance
+
+An analysis of [GitHub Flavored Markdown (GFM)](#gfm) v0.29-gfm specification compliance was performed across all 6 supported compilers (markdown-it, marked, remark, commonmark, remarkable, showdown).
+
+Detailed findings, prioritized gaps, and implementation recommendations are documented in:
+
+- [GFM Compliance Gap Analysis](gfm-specifications/GFM-COMPLIANCE-GAP-ANALYSIS.md)
+- [GFM Specification (split by chapter)](gfm-specifications/INDEX.md)
+
+### Key Findings
+
+| Priority | Issue | Status |
+|:--------:|-------|--------|
+| P0 | markdown-it: Tables and Strikethrough not exposed in UI | Open ([#2](../../issues/2)) |
+| P0 | marked: `extendedAutolink` not exposed in UI | Open ([#6](../../issues/6)) |
+| P1 | Disallowed Raw HTML (tagfilter) missing across all compilers | Open ([#1](../../issues/1)) |
+| P1 | remark: extended autolink not integrated | Open ([#4](../../issues/4)) |
+| P2 | markdown-it: GFM One-Toggle UI missing | Open ([#3](../../issues/3)) |
+| P2 | GFM extension coverage not unified across compilers | Open ([#5](../../issues/5)) |
+
+## Test Suite
+
+Unit and integration tests using Node.js built-in `node:test` framework (zero external dependencies).
+
+### Test Summary
+
+| Category | Tests | Status |
+|----------|------:|--------|
+| Unit: Pure Functions (12 modules) | 48 | All pass |
+| Unit: Compilers (6 adapters) | 113 | All pass |
+| Integration: Cross-compiler Compatibility | 78 | All pass |
+| Integration: GFM Specification Compliance | 104 | 99 pass, 5 todo |
+| **Total** | **343** | **338 pass / 0 fail / 5 todo** |
+
+### Running Tests
+
+```bash
+node --test tests/**/*.test.js           # all tests
+node --test tests/unit/*.test.js         # unit tests only
+node --test tests/integration/*.test.js  # integration tests only
+```
+
+### Test Results
+
+Full test report: [test-results-2026-08-20.md](reports/test-results-2026-08-20.md)
+
+### Known Limitations (5 todo)
+
+- Strikethrough across paragraph breaks: no compiler implements cross-paragraph `~~strikethrough~~` per GFM spec section 6.5
+
+---
+
 # License
 
 The MIT License (MIT)
